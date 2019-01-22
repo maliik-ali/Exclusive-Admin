@@ -11,7 +11,7 @@ Exclusive Admin is an open source, admin dashboard template free avaliable in mu
 ### Status
 
 <p>
-<a href="https://github.com/devdap/Exclusive-Admin/blob/master/LICENSE" rel="nofollow"><img src="https://img.shields.io/github/license/devdap/Exclusive-Admin.svg?style=plastic" alt="GitHub license" style="max-width:100%;"></a>
+<a href="https://github.com/devdap/Exclusive-Admin/blob/master/LICENSE.txt" rel="nofollow"><img src="https://img.shields.io/github/license/devdap/Exclusive-Admin.svg?style=plastic" alt="GitHub license" style="max-width:100%;"></a>
 </p>
 
 
@@ -78,4 +78,4 @@ Keep track of development and community news at [devdap](http://devdap.com)
 
 ### Copyright and License
 
-© 2018 [devdap](https://devdap.com). All rights reserved. Code released under the [MIT](https://github.com/devdap/Exclusive-Admin/blob/master/LICENSE) license.
+© 2018 [devdap](https://devdap.com). All rights reserved. Code released under the [MIT](https://github.com/devdap/Exclusive-Admin/blob/master/LICENSE.txt) license.
