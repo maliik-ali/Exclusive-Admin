@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - devdap Responsive Admin Theme</title>
+    <link rel="icon" href="~/images/favicons.ico" />
+    
+    <!--Render Stylesheets-->
+    @Styles.Render("~/Content/css")
+
+</head>
+<body class="light-skin fixed-navbar sidebar-scroll">
+
+    <!-- Render Navigation Layouts-->
+    @Html.Partial("_Navigation")
+
+    <!--Render Sidebar-->
+    @Html.Partial("_Sidebar")
+
+    <div id="wrapper">
+        @RenderBody()
+
+        <!--Render Footer -->
+        <footer class="footer">
+            <span class="pull-right">
+                Exclusive Admin
+            </span>
+            Powered By devdap.com
+        </footer>
+    </div>
+
+    <!--Render Javascripts-->
+    @Scripts.Render("~/Scripts/vendor/jquery/dist/jquery.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.min.js")
+    @Scripts.Render("~/Scripts/vendor/slimScroll/jquery.slimscroll.min.js")
+    @Scripts.Render("~/Scripts/vendor/bootstrap/dist/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.resize.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.pie.js")
+    @Scripts.Render("~/Scripts/vendor/flot.curvedlines/curvedLines.js")
+    @Scripts.Render("~/Scripts/vendor/jquery.flot.spline/index.js")
+    @Scripts.Render("~/Scripts/vendor/metisMenu/dist/metisMenu.min.js")
+    @Scripts.Render("~/Scripts/vendor/iCheck/icheck.min.js")
+    @Scripts.Render("~/Scripts/vendor/peity/jquery.peity.min.js")
+    @Scripts.Render("~/Scripts/vendor/sparkline/index.js")
+    @Scripts.Render("~/Scripts/vendor/chartjs/Chart.min.js")
+    @Scripts.Render("~/Scripts/devdap.js")
+    @Scripts.Render("~/Scripts/charts.js")
+
+
+    <!--Render Custom Javascripts For Layout Option Page-->
+    <script>$(function () { $("#fixed-navbar").click(function () { if ($("body").hasClass("fixed-navbar")) { $("body").removeClass("fixed-navbar"); $(".status-fixed-navbar").html("Off"); if ($("body").hasClass("sidebar-scroll")) { $("body").removeClass("sidebar-scroll"); $("#navigation").slimScroll({ destroy: true }); $("#navigation").attr("style", ""); $(".status-fixed-sidebar").html("Off") } if ($("body").hasClass("fixed-small-header")) { $("body").removeClass("fixed-small-header"); $(".status-fixed-small-header").html("Off") } } else { $("body").addClass("fixed-navbar"); $(".status-fixed-navbar").html("<span class='text-success font-bold'>On</span>"); $("body").removeClass("boxed"); $(".status-boxed-layout").html("Off") } }); $("#fixed-sidebar").click(function () { if ($("body").hasClass("sidebar-scroll")) { $("body").removeClass("sidebar-scroll"); $("#navigation").slimScroll({ destroy: true }); $("#navigation").attr("style", ""); $(".status-fixed-sidebar").html("Off") } else { $("body").addClass("fixed-navbar"); $("body").addClass("sidebar-scroll"); $("#navigation").slimScroll({ height: "100%", opacity: 0.3, size: 0, wheelStep: 10 }); $(".status-fixed-navbar").html("<span class='text-success font-bold'>On</span>"); $(".status-fixed-sidebar").html("<span class='text-success font-bold'>On</span>"); $("body").removeClass("boxed"); $(".status-boxed-layout").html("Off") } }); $("#fixed-footer").click(function () { if ($("body").hasClass("fixed-footer")) { $("body").removeClass("fixed-footer"); $(".status-fixed-footer").html("Off") } else { $("body").addClass("fixed-footer"); $(".status-fixed-footer").html("<span class='text-success font-bold'>On</span>"); $("body").removeClass("boxed"); $(".status-boxed-layout").html("Off") } }); $("#fixed-small-header").click(function () { if ($("body").hasClass("fixed-small-header")) { $("body").removeClass("fixed-small-header"); $("body").removeClass("sidebar-scroll"); $("#navigation").slimScroll({ destroy: true }); $("#navigation").attr("style", ""); $("body").removeClass("fixed-navbar"); $(".status-fixed-small-header").html("Off"); $(".status-fixed-sidebar").html("Off"); $(".status-fixed-navbar").html("Off") } else { $("body").addClass("fixed-navbar"); $("body").addClass("sidebar-scroll"); $("#navigation").slimScroll({ height: "100%", opacity: 0.3, size: 0, wheelStep: 10 }); $("body").addClass("fixed-small-header"); $(".status-fixed-navbar").html("<span class='text-success font-bold'>On</span>"); $(".status-fixed-sidebar").html("<span class='text-success font-bold'>On</span>"); $(".status-fixed-small-header").html("<span class='text-success font-bold'>On</span>"); $("body").removeClass("boxed"); $(".status-boxed-layout").html("Off") } }); $("#boxed-layout").click(function () { if ($("body").hasClass("boxed")) { $("body").removeClass("boxed"); $(".status-boxed-layout").html("Off") } else { $("body").addClass("boxed"); $(".status-boxed-layout").html("<span class='text-success font-bold'>On</span>"); $("body").removeClass("fixed-small-header"); $("body").removeClass("sidebar-scroll"); $("#navigation").slimScroll({ destroy: true }); $("#navigation").attr("style", ""); $("body").removeClass("fixed-navbar"); $("body").removeClass("fixed-footer"); $(".status-fixed-small-header").html("Off"); $(".status-fixed-footer").html("Off"); $(".status-fixed-sidebar").html("Off"); $(".status-fixed-navbar").html("Off") } }) });</script>
+
+    <!--Render Custom  Javascripts Dashboard Page-->
+    <script>$(function () { var a = [[0, 55], [1, 48], [2, 40], [3, 36], [4, 40], [5, 60], [6, 50], [7, 51]]; var e = [[0, 56], [1, 49], [2, 41], [3, 38], [4, 46], [5, 67], [6, 57], [7, 59]]; var d = { series: { splines: { show: true, tension: 0.4, lineWidth: 1, fill: 0.4 }, }, grid: { tickColor: "#f0f0f0", borderWidth: 1, borderColor: "f0f0f0", color: "#6a6c6f" }, colors: ["#C97CE5", "#F8F9FB"], }; $.plot($("#flot-line-chart"), [a, e], d); var c = [{ label: "line", data: [[1, 10], [2, 26], [3, 16], [4, 36], [5, 32], [6, 51]] }]; var b = { series: { lines: { show: true, lineWidth: 0, fill: true, fillColor: "#EFDEF7" } }, colors: ["#62cb31"], grid: { show: false }, legend: { show: false } }; $.plot($("#flot-income-chart"), c, b) });</script>
+    <script>$(function () { var c = { labels: ["January", "February", "March", "April"], datasets: [{ label: "Example dataset", backgroundColor: "rgba(201,124,229,0.3)", borderColor: "rgba(201,124,229,0.7)", pointBackgroundColor: "rgba(130,67,152,1)", pointBorderColor: "#fff", pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "rgba(26,179,148,1)", data: [17, 21, 19, 24] }] }; var b = { responsive: true, legend: { display: false } }; var a = document.getElementById("lineOptions").getContext("2d"); new Chart(a, { type: "line", data: c, options: b }) });</script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

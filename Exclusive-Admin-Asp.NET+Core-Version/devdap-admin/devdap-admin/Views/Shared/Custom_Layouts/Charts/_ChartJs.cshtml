@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - devdap Responsive Admin Theme</title>
+    <link rel="icon" href="~/images/favicons.ico" />
+
+    <!--Render Main Stylesheets-->
+    @Styles.Render("~/Content/css")
+
+   
+</head>
+<body class="light-skin fixed-navbar sidebar-scroll">
+    <!-- Render Navigation Layouts-->
+    @Html.Partial("_Navigation")
+
+    <!--Render Sidebar-->
+    @Html.Partial("_Sidebar")
+
+    <div id="wrapper">
+        @RenderBody()
+
+        <!--Render Footer -->
+        <footer class="footer">
+            <span class="pull-right">
+                Exclusive Admin
+            </span>
+            Powered By devdap.com
+        </footer>
+    </div>
+
+    @*Primary Javascript Files for Every Page*@
+    @Scripts.Render("~/Scripts/vendor/jquery/dist/jquery.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.min.js")
+    @Scripts.Render("~/Scripts/vendor/slimScroll/jquery.slimscroll.min.js")
+    @Scripts.Render("~/Scripts/vendor/bootstrap/dist/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/vendor/metisMenu/dist/metisMenu.min.js")
+    @Scripts.Render("~/Scripts/vendor/iCheck/icheck.min.js")
+    @Scripts.Render("~/Scripts/vendor/sparkline/index.js")
+    @Scripts.Render("~/Scripts/vendor/chartjs/Chart.min.js")
+
+    @*Main JS Files*@
+    @Scripts.Render("~/Scripts/devdap.js")
+
+    <script>$(function () { var B = { labels: ["January", "February", "March", "April", "May", "June", "July"], datasets: [{ label: "Dt 1", backgroundColor: "rgba(200,121,231, 0.5)", pointBorderWidth: 1, pointBackgroundColor: "rgba(130,67,152,1)", pointRadius: 3, pointBorderColor: "#ffffff", borderWidth: 1, data: [16, 32, 18, 26, 42, 33, 44] }, { label: "Dt 2", backgroundColor: "rgba(255,228,170,0.5)", borderColor: "rgba(255,228,170,1)", pointBorderWidth: 1, pointBackgroundColor: "rgba(220,220,220,1)", pointRadius: 3, pointBorderColor: "#ffffff", borderWidth: 1, data: [22, 44, 67, 43, 76, 45, 12] }] }; var r = { responsive: true }; var q = document.getElementById("lineOptions").getContext("2d"); new Chart(q, { type: "line", data: B, options: r }); var p = { labels: ["January", "February", "March", "April", "May", "June", "July"], datasets: [{ label: "Dt 1", backgroundColor: "rgba(255,228,170,0.8)", data: [33, 48, 40, 19, 54, 27, 54], lineTension: 0, pointBorderWidth: 1, pointBackgroundColor: "rgba(130,67,152,1)", pointRadius: 3, pointBorderColor: "#ffffff", borderWidth: 1 }] }; var s = { responsive: true, legend: { display: false } }; var q = document.getElementById("sharpLineOptions").getContext("2d"); new Chart(q, { type: "line", data: p, options: s }); var A = { responsive: true }; var v = { labels: ["January", "February", "March", "April", "May", "June", "July"], datasets: [{ label: "Dt 1", backgroundColor: "rgba(79,178,135)", borderColor: "rgba(79,178,135)", highlightFill: "#4b9877", highlightStroke: "#4b9877", borderWidth: 1, data: [65, 59, 80, 81, 56, 55, 40] }, { label: "Dt 2", backgroundColor: "rgba(255,228,170)", borderColor: "rgba(255,228,170)", highlightFill: "#f5d690", highlightStroke: "#f5d690", borderWidth: 1, data: [28, 48, 40, 19, 86, 27, 90] }] }; var q = document.getElementById("barOptions").getContext("2d"); new Chart(q, { type: "bar", data: v, options: A }); var w = { responsive: true, legend: { display: false } }; var C = { labels: ["January", "February", "March", "April", "May", "June", "July"], datasets: [{ label: "Dt 1", backgroundColor: "rgba(130,67,152,0.8)", borderColor: "rgba(130,67,152)", highlightFill: "rgba(201,124,229,0.75)", highlightStroke: "rgba(201,124,229,1)", borderWidth: 1, data: [15, 20, 30, 40, 30, 50, 60] }] }; var q = document.getElementById("singleBarOptions").getContext("2d"); new Chart(q, { type: "bar", data: C, options: w }); var z = { datasets: [{ data: [120, 130, 100], backgroundColor: ["rgba(201,124,229,0.6)", "rgba(201,124,229,0.8)", "rgba(201,124,229,1)"], label: "Dt 1" }], labels: ["devdap", "Inspinia", "Luna"] }; var x = { responsive: true }; var q = document.getElementById("polarOptions").getContext("2d"); new Chart(q, { type: "polarArea", data: z, options: x }); var t = { labels: ["App", "Software", "Laptop"], datasets: [{ data: [20, 120, 100], backgroundColor: ["rgba(255,228,170,0.6)", "rgba(255,228,170,0.8)", "rgba(255,228,170,1)"], hoverBackgroundColor: ["rgba(130,67,152,0.6)", "rgba(130,67,152,0.8)", "rgba(130,67,152,1)"] }] }; var D = { responsive: true }; var q = document.getElementById("doughnutChart").getContext("2d"); new Chart(q, { type: "doughnut", data: t, options: D }); var u = { labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"], datasets: [{ label: "Dt 1", backgroundColor: "rgba(79,178,135,0.4)", borderColor: "rgba(79,178,135,0.6)", pointBackgroundColor: "rgba(79,178,135,0.8)", pointBorderColor: "#fff", pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "#62cb31", borderWidth: 1, data: [65, 59, 66, 45, 56, 55, 40] }, { label: "Dt 2", backgroundColor: "rgba(79,178,135,0.6)", borderColor: "rgba(79,178,135,0.6)", pointBackgroundColor: "rgba(79,178,135,0.8)", pointBorderColor: "#fff", pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "#62cb31", borderWidth: 1, data: [28, 12, 40, 19, 63, 27, 87] }] }; var y = { responsive: true }; var q = document.getElementById("radarChart").getContext("2d"); new Chart(q, { type: "radar", data: u, options: y }) });</script>
+    @RenderSection("scripts", required: false)
+</body>
+                    </html>

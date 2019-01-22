@@ -1,0 +1,29 @@
+﻿@{
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"].ToString();
+    string cLayout = "";
+    if (controller == "Interface")
+    {
+        cLayout = "~/Views/Shared/Custom_Layouts/_Interface.cshtml";
+    }
+    else if (controller =="AppViews")
+    {
+        cLayout = "~/Views/Shared/Custom_Layouts/_AppViews.cshtml";
+    }
+    else if (controller == "BoxTransition")
+    {
+        cLayout = "~/Views/Shared/Custom_Layouts/_BoxTransition.cshtml";
+    }
+    else if (controller == "Tables")
+    {
+        cLayout = "~/Views/Shared/Custom_Layouts/_Tables.cshtml";
+    }
+    else if (controller == "Forms")
+    {
+        cLayout = "~/Views/Shared/Custom_Layouts/_Forms.cshtml";
+    }
+    else
+    {
+        cLayout = "~/Views/Shared/_Layout.cshtml";
+    }
+    Layout = cLayout;
+}

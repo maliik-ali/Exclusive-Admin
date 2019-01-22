@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - devdap Responsive Admin Theme</title>
+    <link rel="icon" href="~/images/favicons.ico" />
+
+    <!--Render Main Stylesheets-->
+    @Styles.Render("~/Content/css")
+
+    <!--Render Mailbox Compose Stylesheets-->
+    <link rel="stylesheet" href="~/Scripts/vendor/summernote/dist/summernote.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/summernote/dist/summernote-bs3.css" />
+
+    <!-- Gallery Page Css From Vendor -->
+    <link rel="stylesheet" href="~/Scripts/vendor/blueimp-gallery/css/blueimp-gallery.min.css" />
+
+    <!-- Calendar Page Css From Vendor -->
+    <link rel="stylesheet" href="~/Scripts/vendor/fullcalendar/dist/fullcalendar.print.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/fullcalendar/dist/fullcalendar.min.css" />
+
+    <!-- Search Page Css From Vendor-->
+    <link rel="stylesheet" href="~/Scripts/vendor/select2-3.5.2/select2.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/select2-bootstrap/select2-bootstrap.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/bootstrap-datepicker-master/dist/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+
+
+    <!--  Project Compose Page Css From Vendor -->
+    <link rel="stylesheet" href="~/Scripts/vendor/jquery-ui/themes/base/all.css" />
+
+</head>
+<body class="light-skin fixed-navbar sidebar-scroll">
+    <!-- Render Navigation Layouts-->
+    @Html.Partial("_Navigation")
+
+    <!--Render Sidebar-->
+    @Html.Partial("_Sidebar")
+
+    <div id="wrapper">
+        @RenderBody()
+
+        <!--Render Footer -->
+        <footer class="footer">
+            <span class="pull-right">
+                Exclusive Admin
+            </span>
+            Powered By devdap.com
+        </footer>
+    </div>
+
+    @*Primary Javascript Files for Every Page*@
+    @Scripts.Render("~/Scripts/vendor/jquery/dist/jquery.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.min.js")
+    @Scripts.Render("~/Scripts/vendor/slimScroll/jquery.slimscroll.min.js")
+    @Scripts.Render("~/Scripts/vendor/bootstrap/dist/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/vendor/metisMenu/dist/metisMenu.min.js")
+    @Scripts.Render("~/Scripts/vendor/iCheck/icheck.min.js")
+    @Scripts.Render("~/Scripts/vendor/peity/jquery.peity.min.js")
+    @Scripts.Render("~/Scripts/vendor/sparkline/index.js")
+
+    @*Main JS Files*@
+    @Scripts.Render("~/Scripts/devdap.js")
+    @Scripts.Render("~/Scripts/charts.js")
+
+    @*Mailbox Compose JS Files From Vendor*@
+    @Scripts.Render("~/Scripts/vendor/summernote/dist/summernote.min.js")
+
+
+    @*Project  Page Js File From Vendor*@
+    @Scripts.Render("~/Scripts/vendor/chartjs/Chart.min.js")
+
+    @*MailBox Compose Page Js File From Vendor*@
+    @Scripts.Render("~/Scripts/vendor/peity/jquery.peity.min.js")
+
+
+    @*Search  Page Js File From Vendor*@
+    @Scripts.Render("~/Scripts/vendor/moment/moment.js")
+
+    @Scripts.Render("~/Scripts/vendor/select2-3.5.2/select2.min.js")
+
+    @Scripts.Render("~/Scripts/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js")
+
+    @Scripts.Render("~/Scripts/vendor/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js")
+
+    @*Calendar Page Js File From Vendor*@
+    @Scripts.Render("~/Scripts/vendor/moment/min/moment.min.js")
+
+    @Scripts.Render("~/Scripts/vendor/fullcalendar/dist/fullcalendar.min.js")
+
+    @*Gallery Page Js File From Vendor*@
+    @Scripts.Render("~/Scripts/vendor/blueimp-gallery/js/jquery.blueimp-gallery.min.js")
+
+   
+    <style>.lightBoxGallery {text-align: center}.lightBoxGallery a {margin: 5px;display: inline-block}</style>
+
+   
+    <script>$(function () { $("#external-events div.external-event").each(function () { $(this).data("event", { title: $.trim($(this).text()), stick: true }); $(this).draggable({ zIndex: 1111999, revert: true, revertDuration: 0 }) }); var b = new Date(); var c = b.getDate(); var a = b.getMonth(); var e = b.getFullYear(); $("#calendar").fullCalendar({ header: { left: "prev,next today", center: "title", right: "month,agendaWeek,agendaDay" }, editable: true, droppable: true, drop: function () { if ($("#drop-remove").is(":checked")) { $(this).remove() } }, events: [{ title: "All Day Event", start: new Date(e, a, 1) }, { title: "Long Event", start: new Date(e, a, c - 5), end: new Date(e, a, c - 2), }, { id: 999, title: "Repeating Event", start: new Date(e, a, c - 3, 16, 0), allDay: false, }, { title: "devdap task", start: new Date(e, a, c + 5, 19, 0), end: new Date(e, a, c + 6, 22, 30), allDay: false, backgroundColor: "#C97CE5", borderColor: "#C97CE5" }, { id: 999, title: "Repeating Event", start: new Date(e, a, c + 4, 16, 0), allDay: false }, { title: "Meeting", start: new Date(e, a, c, 10, 30), allDay: false }, { title: "Lunch", start: new Date(e, a, c, 12, 0), end: new Date(e, a, c, 14, 0), allDay: false }, { title: "Birthday Party", start: new Date(e, a, c + 1, 19, 0), end: new Date(e, a, c + 1, 22, 30), allDay: false }, { title: "Click for Google", start: new Date(e, a, 28), end: new Date(e, a, 29), url: "http://google.com/" }], }) }); </script>
+
+    <script>$(function() {$(".input-group.date").datepicker(); $("#demo1").TouchSpin({min: 0, max: 100, step: 0.1, decimals: 2, boostat: 5, maxboostedstep: 10 }); $("#demo2").TouchSpin({verticalbuttons: true }); $(".select2").select2() });</script >
+
+
+    <script>$(function() {$(".summernote").summernote({ toolbar: [["headline", ["style"]], ["style", ["bold", "italic", "underline", "superscript", "subscript", "strikethrough", "clear"]], ["textsize", ["fontsize"]], ["alignment", ["ul", "ol", "paragraph", "lineheight"]],] })});</script>
+
+    
+    <script>$(function () { var c = { labels: ["January", "February", "March", "April"], datasets: [{ label: "Example dataset", backgroundColor: "rgba(201,124,229,0.5)", borderColor: "rgba(201,124,229,1)", pointBackgroundColor: "#824398", pointBorderColor: "#fff", pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "rgba(26,179,148,1)", data: [17, 21, 19, 24] }] }; var b = { responsive: true, legend: { display: false } }; var a = document.getElementById("lineOptions").getContext("2d"); new Chart(a, { type: "line", data: c, options: b }) });</script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+                    </html>

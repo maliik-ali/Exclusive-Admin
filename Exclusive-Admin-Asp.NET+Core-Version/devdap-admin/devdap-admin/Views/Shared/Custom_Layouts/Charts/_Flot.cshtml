@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - devdap Responsive Admin Theme</title>
+    <link rel="icon" href="~/images/favicons.ico" />
+
+    <!--Render Main Stylesheets-->
+    @Styles.Render("~/Content/css")
+
+   
+</head>
+<body class="light-skin fixed-navbar sidebar-scroll">
+    <!-- Render Navigation Layouts-->
+    @Html.Partial("_Navigation")
+
+    <!--Render Sidebar-->
+    @Html.Partial("_Sidebar")
+
+    <div id="wrapper">
+        @RenderBody()
+
+        <!--Render Footer -->
+        <footer class="footer">
+            <span class="pull-right">
+                Exclusive Admin
+            </span>
+            Powered By devdap.com
+        </footer>
+    </div>
+
+    @*Primary Javascript Files for Every Page*@
+    @Scripts.Render("~/Scripts/vendor/jquery/dist/jquery.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.min.js")
+    @Scripts.Render("~/Scripts/vendor/slimScroll/jquery.slimscroll.min.js")
+    @Scripts.Render("~/Scripts/vendor/bootstrap/dist/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/vendor/metisMenu/dist/metisMenu.min.js")
+    @Scripts.Render("~/Scripts/vendor/iCheck/icheck.min.js")
+    @Scripts.Render("~/Scripts/vendor/sparkline/index.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.resize.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.pie.js")
+    @Scripts.Render("~/Scripts/vendor/flot.curvedlines/curvedLines.js")
+    @Scripts.Render("~/Scripts/vendor/jquery.flot.spline/index.js")
+
+    @*Main JS Files*@
+    @Scripts.Render("~/Scripts/devdap.js")
+
+    <script>$(function () { var u = [[0, 26], [1, 24], [2, 29], [3, 26], [4, 33], [5, 26], [6, 36], [7, 28]]; var x = { series: { splines: { show: true, tension: 0.4, lineWidth: 1, fill: 0.5 }, }, grid: { tickColor: "#e4e5e7", borderWidth: 1, borderColor: "#e4e5e7", color: "#6a6c6f" }, colors: ["#C97CE5", "#efefef"], }; $.plot($("#flot-line-chart"), [u], x); var v = [{ label: "bar", data: [[1, 12], [2, 14], [3, 18], [4, 24], [5, 32], [6, 22]] }]; var i = { series: { bars: { show: true, barWidth: 0.8, fill: true, fillColor: { colors: [{ opacity: 0.6 }, { opacity: 0.6 }] }, lineWidth: 1 } }, xaxis: { tickDecimals: 0 }, colors: ["#C97CE5"], grid: { color: "#e4e5e7", hoverable: true, clickable: true, tickColor: "#D4D4D4", borderWidth: 0, borderColor: "e4e5e7", }, legend: { show: false }, tooltip: true, tooltipOpts: { content: "x: %x, y: %y" } }; $.plot($("#flot-bar-chart"), v, i); var w = [{ label: "Data 1", data: 16, color: "rgba(201,124,229,0.6)", }, { label: "Data 2", data: 6, color: "rgba(201,124,229,1)", }, { label: "Data 3", data: 22, color: "rgba(201,124,229,0.4)", }, { label: "Data 4", data: 32, color: "rgba(201,124,229,0.2)", }]; var o = { series: { pie: { show: true } }, grid: { hoverable: true }, tooltip: true, tooltipOpts: { content: "%p.0%, %s", shifts: { x: 20, y: 0 }, defaultTheme: false } }; $.plot($("#flot-pie-chart"), w, o); var y = [{ label: "line", data: [[1, 24], [2, 15], [3, 29], [4, 34], [5, 30], [6, 40], [7, 23], [8, 27], [9, 40]] }]; var p = { series: { lines: { show: true, lineWidth: 1, fill: true, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.5 }] } } }, xaxis: { tickDecimals: 0 }, colors: ["#C97CE5"], grid: { tickColor: "#e4e5e7", borderWidth: 1, borderColor: "#e4e5e7", color: "#6a6c6f" }, legend: { show: false }, tooltip: true, tooltipOpts: { content: "x: %x, y: %y" } }; $.plot($("#flot-area-chart"), y, p); var s = [], q = []; for (var t = 0; t < 14; t += 0.5) { s.push([t, Math.sin(t)]); q.push([t, Math.cos(t)]) } var z = [{ data: s, label: "sin(x)" }, { data: q, label: "cos(x)" }]; var r = { series: { lines: { show: true }, points: { show: true } }, grid: { tickColor: "#e4e5e7", borderWidth: 1, borderColor: "#e4e5e7", color: "#6a6c6f" }, yaxis: { min: -1.2, max: 1.2 }, colors: ["#C97CE5", "#efefef"], }; $.plot($("#flot-sin-chart"), z, r) });</script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

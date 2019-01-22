@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - devdap Responsive Admin Theme</title>
+    <link rel="icon" href="~/images/favicons.ico" />
+
+    <!--Render Main Stylesheets-->
+    @Styles.Render("~/Content/css")
+
+    <link rel="stylesheet" href="~/Scripts/vendor/sweetalert/lib/sweet-alert.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/summernote/dist/summernote.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/summernote/dist/summernote-bs3.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/xeditable/bootstrap3-editable/css/bootstrap-editable.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/select2-3.5.2/select2.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/select2-bootstrap/select2-bootstrap.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/bootstrap-datepicker-master/dist/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/clockpicker/dist/bootstrap-clockpicker.min.css" />
+    <link rel="stylesheet" href="~/Scripts/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
+</head>
+<body class="light-skin fixed-navbar sidebar-scroll">
+    <!-- Render Navigation Layouts-->
+    @Html.Partial("_Navigation")
+
+    <!--Render Sidebar-->
+    @Html.Partial("_Sidebar")
+
+    <div id="wrapper">
+        @RenderBody()
+
+        <!--Render Footer -->
+        <footer class="footer">
+            <span class="pull-right">
+                Exclusive Admin
+            </span>
+            Powered By devdap.com
+        </footer>
+    </div>
+
+    @*Primary Javascript Files for Every Page*@
+    @Scripts.Render("~/Scripts/vendor/jquery/dist/jquery.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.min.js")
+    @Scripts.Render("~/Scripts/vendor/slimScroll/jquery.slimscroll.min.js")
+    @Scripts.Render("~/Scripts/vendor/bootstrap/dist/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/vendor/metisMenu/dist/metisMenu.min.js")
+    @Scripts.Render("~/Scripts/vendor/iCheck/icheck.min.js")
+    @Scripts.Render("~/Scripts/vendor/peity/jquery.peity.min.js")
+    @Scripts.Render("~/Scripts/vendor/sparkline/index.js")
+
+    @*Main JS Files*@
+    @Scripts.Render("~/Scripts/devdap.js")
+
+
+    @*Mailbox Compose JS Files From Vendor*@
+    @Scripts.Render("~/Scripts/vendor/sweetalert/lib/sweet-alert.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-validation/jquery.validate.min.js")
+    @Scripts.Render("~/Scripts/vendor/summernote/dist/summernote.min.js")
+
+    @Scripts.Render("~/Scripts/vendor/moment/moment.js")
+    @Scripts.Render("~/Scripts/vendor/xeditable/bootstrap3-editable/js/bootstrap-editable.min.js")
+    @Scripts.Render("~/Scripts/vendor/select2-3.5.2/select2.min.js")
+    @Scripts.Render("~/Scripts/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js")
+    @Scripts.Render("~/Scripts/vendor/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js")
+    @Scripts.Render("~/Scripts/vendor/clockpicker/dist/bootstrap-clockpicker.min.js")
+    @Scripts.Render("~/Scripts/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js")
+
+
+    <script>$(function () { $('a[data-toggle="tab"]').on("shown.bs.tab", function (a) { $('a[data-toggle="tab"]').removeClass("btn-primary"); $('a[data-toggle="tab"]').addClass("btn-default"); $(this).removeClass("btn-default"); $(this).addClass("btn-primary") }); $(".next").click(function () { var a = $(this).parents(".tab-pane").next().attr("id"); $("[href=#" + a + "]").tab("show") }); $(".prev").click(function () { var a = $(this).parents(".tab-pane").prev().attr("id"); $("[href=#" + a + "]").tab("show") }); $(".submitWizard").click(function () { var b = $(".approveCheck").is(":checked"); if (b) { $("[href=#step1]").tab("show"); var a = $("#simpleForm").serialize(); swal({ title: "Thank you!", text: "You approved our example form!", type: "success" }) } else { swal({ title: "Error!", text: "You have to approve form checkbox.", type: "error" }) } }) });</script>
+    <script>$(function () { $("#form").validate({ rules: { password: { required: true, minlength: 3 }, url: { required: true, url: true }, number: { required: true, number: true }, max: { required: true, maxlength: 4 } }, submitHandler: function (a) { a.submit() } }); $("#form_2").validate({ rules: { name: { required: true, minlength: 3 }, username: { required: true, minlength: 5 }, url: { required: true, url: true }, number: { required: true, number: true }, last_name: { required: true, minlength: 6 } }, messages: { number: { required: "(Please enter your phone number)", number: "(Please enter valid phone number)" }, last_name: { required: "This is custom message for required", minlength: "This is custom message for min length" } }, submitHandler: function (a) { a.submit() }, errorPlacement: function (a, b) { $(b).closest("form").find("label[for='" + b.attr("id") + "']").append(a) }, errorElement: "span", }) });</script>
+    <script>$(function () { $(".summernote").summernote(); $(".summernote1").summernote({ toolbar: [["headline", ["style"]], ["style", ["bold", "italic", "underline", "superscript", "subscript", "strikethrough", "clear"]], ["textsize", ["fontsize"]], ["alignment", ["ul", "ol", "paragraph", "lineheight"]],] }); $(".summernote2").summernote({ airMode: true, }) });</script>
+    <script>$(function () { $("#datepicker").datepicker(); $("#datepicker").on("changeDate", function (a) { $("#my_hidden_input").val($("#datepicker").datepicker("getFormattedDate")) }); $("#datapicker2").datepicker(); $(".input-group.date").datepicker({}); $(".input-daterange").datepicker({}); $("#demo1").TouchSpin({ min: 0, max: 100, step: 0.1, decimals: 2, boostat: 5, maxboostedstep: 10, }); $("#demo2").TouchSpin({ verticalbuttons: true }); $("#demo3").TouchSpin({ postfix: "%" }); $("#demo4").TouchSpin({ postfix: "a button", postfix_extraclass: "btn btn-default" }); $(".js-source-states").select2(); $(".js-source-states-2").select2(); $.fn.editable.defaults.mode = "inline"; $.fn.editable.defaults.url = "#"; $("#username").editable({ url: "#", type: "text", pk: 1, name: "username", title: "Enter username" }); $("#firstname").editable({ validate: function (a) { if ($.trim(a) == "") { return "This field is required" } } }); $("#sex").editable({ prepend: "not selected", source: [{ value: 1, text: "Male" }, { value: 2, text: "Female" }], display: function (d, c) { var a = { "": "gray", 1: "green", 2: "blue" }, b = $.grep(c, function (e) { return e.value == d }); if (b.length) { $(this).text(b[0].text).css("color", a[d]) } else { $(this).empty() } } }); $("#dob").editable(); $("#event").editable({ placement: "right", combodate: { firstItem: "name" } }); $("#comments").editable({ showbuttons: "bottom" }); $("#fruits").editable({ pk: 1, limit: 3, source: [{ value: 1, text: "banana" }, { value: 2, text: "peach" }, { value: 3, text: "apple" }, { value: 4, text: "watermelon" }, { value: 5, text: "orange" }] }); $("#user .editable").on("hidden", function (c, b) { if (b === "save" || b === "nochange") { var a = $(this).closest("tr").next().find(".editable"); if ($("#autoopen").is(":checked")) { setTimeout(function () { a.editable("show") }, 300) } else { a.focus() } } }); $(".clockpicker").clockpicker({ autoclose: true }); $("#datetimepicker1").datetimepicker() });</script>
+    
+    @RenderSection("scripts", required: false)
+</body>
+                    </html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - devdap Responsive Admin Theme</title>
+    <link rel="icon" href="~/images/favicons.ico" />
+    
+    <!--Render Stylesheets-->
+    @Styles.Render("~/Content/css")
+
+</head>
+<body class="light-skin fixed-navbar sidebar-scroll">
+
+    <!-- Render Navigation Layouts-->
+    @Html.Partial("_Navigation")
+
+    <!--Render Sidebar-->
+    @Html.Partial("_Sidebar")
+
+    <div id="wrapper">
+        @RenderBody()
+
+        <!--Render Footer -->
+        <footer class="footer">
+            <span class="pull-right">
+                Exclusive Admin
+            </span>
+            Powered By devdap.com
+        </footer>
+    </div>
+
+    <!--Render Javascripts-->
+    @Scripts.Render("~/Scripts/vendor/jquery/dist/jquery.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.min.js")
+    @Scripts.Render("~/Scripts/vendor/slimScroll/jquery.slimscroll.min.js")
+    @Scripts.Render("~/Scripts/vendor/bootstrap/dist/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.resize.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-flot/jquery.flot.pie.js")
+    @Scripts.Render("~/Scripts/vendor/flot.curvedlines/curvedLines.js")
+    @Scripts.Render("~/Scripts/vendor/jquery.flot.spline/index.js")
+    @Scripts.Render("~/Scripts/vendor/metisMenu/dist/metisMenu.min.js")
+    @Scripts.Render("~/Scripts/vendor/iCheck/icheck.min.js")
+    @Scripts.Render("~/Scripts/vendor/peity/jquery.peity.min.js")
+    @Scripts.Render("~/Scripts/vendor/sparkline/index.js")
+    @Scripts.Render("~/Scripts/vendor/chartjs/Chart.min.js")
+    @Scripts.Render("~/Scripts/devdap.js")
+    @Scripts.Render("~/Scripts/charts.js")
+
+
+    <!--Render Custom Javascripts-->
+    <script>$(function () { var m = [{ label: "line", data: [[1, 10], [2, 26], [3, 16], [4, 36], [5, 32], [6, 51]] }]; var n = { series: { lines: { show: true, lineWidth: 0, fill: true, fillColor: "#EFDEF7" } }, colors: ["#62cb31"], grid: { show: false }, legend: { show: false } }; $.plot($("#flot-income-chart"), m, n); var p = [{ label: "bar", data: [[1, 12], [2, 14], [3, 18], [4, 24], [5, 32], [6, 22]] }]; var j = { series: { bars: { show: true, barWidth: 0.8, fill: true, fillColor: { colors: [{ opacity: 1 }, { opacity: 1 }] }, lineWidth: 1 } }, xaxis: { tickDecimals: 0 }, colors: ["#FFE4AA"], grid: { show: false }, legend: { show: false } }; $.plot($("#flot-bar-chart"), p, j); var k = [{ label: "Data 1", data: 16, color: "rgb(216,139,245,0.4)", }, { label: "Data 2", data: 6, color: "rgb(216,139,245,0.6)", }, { label: "Data 3", data: 22, color: "rgb(216,139,245,0.8)", }, { label: "Data 4", data: 32, color: "rgb(216,139,245,1)", }]; var i = { series: { pie: { show: true } }, grid: { hoverable: true }, tooltip: true, tooltipOpts: { content: "%p.0%, %s", shifts: { x: 20, y: 0 }, defaultTheme: false } }; $.plot($("#flot-pie-chart"), k, i); var o = [{ label: "line", data: [[1, 24], [2, 15], [3, 29], [4, 34], [5, 30], [6, 40], [7, 23], [8, 27], [9, 40]] }]; var l = { series: { lines: { show: true, lineWidth: 1, fill: true, fillColor: { colors: [{ opacity: 1 }, { opacity: 1 }] } } }, xaxis: { tickDecimals: 0 }, colors: ["#824398"], grid: { tickColor: "#e4e5e7", borderWidth: 1, borderColor: "#e4e5e7", color: "#6a6c6f" }, legend: { show: false }, tooltip: true, tooltipOpts: { content: "x: %x, y: %y" } }; $.plot($("#flot-line-chart"), o, l) });</script>
+   
+    @RenderSection("scripts", required: false)
+</body>
+</html>
