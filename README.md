@@ -1,12 +1,10 @@
-# [Exclusive-Admin](https://devdap.com/themes/exclusive-admin-website-template/)
+# [Exclusive-Admin]
 
 Exclusive Admin is an open source, admin dashboard template free avaliable in multiple versions [Bootstrap](https://getbootstrap.com/), [Ruby On Rails](https://rubyonrails.org/), [Asp.NET MVC](https://www.asp.net/), [.NET Core 2.0](https://www.asp.net/core/overview/aspnet-vnext).
 
 ## Preview
 
 ![screenshot_2019-01-22 exclusive admin responsive admin theme 1](https://user-images.githubusercontent.com/35004804/51512396-a27a6980-1e27-11e9-87f9-fe54d116cb38.png)
-
-### [View Live Preview](http://www.exclusive-admin.s3-website.us-east-2.amazonaws.com)
 
 ### Status
 
@@ -37,7 +35,6 @@ Exclusive Admin is an open source, admin dashboard template free avaliable in mu
 
 ✔ Cross Browser
 
-✔ Well Documented
 
 
 ### Download and Installation
@@ -70,12 +67,3 @@ Download or Fork the bit.app repository. And Put in the Sites folder locally and
 
 Contributions are welcome from everyone.
 
-### Community
-
-Keep track of development and community news at [devdap](http://devdap.com)
-
-#### Exclusive Admin was created and maintained by [Asad ALi](https://devdap.com/about-us) Founder of [devdap](https://devdap.com).
-
-### Copyright and License
-
-© 2018 [devdap](https://devdap.com). All rights reserved. Code released under the [MIT](https://github.com/devdap/Exclusive-Admin/blob/master/LICENSE.txt) license.
