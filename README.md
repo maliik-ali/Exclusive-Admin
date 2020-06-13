@@ -6,12 +6,6 @@ Exclusive Admin is an open source, admin dashboard template free avaliable in mu
 
 ![screenshot_2019-01-22 exclusive admin responsive admin theme 1](https://user-images.githubusercontent.com/35004804/51512396-a27a6980-1e27-11e9-87f9-fe54d116cb38.png)
 
-### Status
-
-<p>
-<a href="https://github.com/devdap/Exclusive-Admin/blob/master/LICENSE.txt" rel="nofollow"><img src="https://img.shields.io/github/license/devdap/Exclusive-Admin.svg?style=plastic" alt="GitHub license" style="max-width:100%;"></a>
-</p>
-
 
 ### Features
 
